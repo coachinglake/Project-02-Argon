@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://e4n8ycd6uw2c"]
+
+[ext_resource type="PackedScene" uid="uid://cckyk5wmqnlo1" path="res://prefabs/titleScreen.tscn" id="1_ack8p"]
+[ext_resource type="PackedScene" uid="uid://yhtflpmvfb7p" path="res://prefabs/mainmenu_astriod.tscn" id="2_lqffx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uv7m4"]
+sky_curve = 0.0955921
+ground_curve = 0.108094
+sun_angle_max = 19.44
+
+[sub_resource type="Sky" id="Sky_6fy5d"]
+sky_material = SubResource("ProceduralSkyMaterial_uv7m4")
+
+[sub_resource type="Environment" id="Environment_phf0f"]
+background_mode = 2
+background_energy_multiplier = 1.7
+sky = SubResource("Sky_6fy5d")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_7i8g2"]
+
+[node name="MainMenu" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="title" parent="." instance=ExtResource("1_ack8p")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_phf0f")
+camera_attributes = SubResource("CameraAttributesPractical_7i8g2")
+
+[node name="mainmenuAstriod" parent="." instance=ExtResource("2_lqffx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.67348)

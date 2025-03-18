@@ -4,6 +4,8 @@ using System;
 public partial class AstroidSpawner : Node3D
 {
 	private PackedScene astriod;
+	private PackedScene astriod2;
+	private bool rock = false;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -16,9 +18,16 @@ public partial class AstroidSpawner : Node3D
 	public override void _Process(double delta)
 	{
 		astriod = (PackedScene)GD.Load("res://prefabs/mainmenu_astriod.tscn");
-		
+		astriod2 = (PackedScene)GD.Load("res://prefabs/mainmenu_astriod2.tscn");
 		Node meteor = astriod.Instantiate();
+		Node meteor2 = astriod.Instantiate();
 		
-		AddChild(meteor);
+		if(rock == true)
+		{
+			AddChild(meteor);
+		}else{
+			AddChild(meteor2);
+		}
+		
 	}
 }

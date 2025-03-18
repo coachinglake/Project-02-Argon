@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvstpcmuebxhg"]
+
+[ext_resource type="Script" uid="uid://b8c6ue0lpvb12" path="res://scripts/MainmenuAstriod.cs" id="1_ifq4p"]
+[ext_resource type="ArrayMesh" uid="uid://vmmwoi5ojtmm" path="res://meshes/Astroid2obj.obj" id="2_ifq4p"]
+[ext_resource type="Texture2D" uid="uid://dgwqjv5q5kg4m" path="res://Textures/Astroid.jpg" id="3_v63qx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ifi6s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3d38x"]
+albedo_color = Color(0.537011, 0.537011, 0.537011, 1)
+albedo_texture = ExtResource("3_v63qx")
+roughness_texture = ExtResource("3_v63qx")
+heightmap_enabled = true
+heightmap_scale = -10.27
+heightmap_texture = ExtResource("3_v63qx")
+
+[node name="mainmenuAstriod" type="RigidBody3D"]
+gravity_scale = 0.0
+script = ExtResource("1_ifq4p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.805544, 0, 0, 0, 0.805544, 0, 0, 0, 0.805544, 0, 0, 0)
+shape = SubResource("SphereShape3D_ifi6s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.327392, 0, 0, 0, 0.327392, 0, 0, 0, 0.327392, 0, -0.0625801, 0)
+mesh = ExtResource("2_ifq4p")
+surface_material_override/0 = SubResource("StandardMaterial3D_3d38x")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -50,6 +50,7 @@ label_settings = SubResource("LabelSettings_hw8k7")
 horizontal_alignment = 1
 
 [node name="SettingsButton" type="Button" parent="Control/Control"]
+layout_mode = 0
 offset_left = -188.0
 offset_top = 60.0
 offset_right = -118.0

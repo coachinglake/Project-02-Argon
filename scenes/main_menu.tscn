@@ -1,15 +1,12 @@
 [gd_scene load_steps=7 format=3 uid="uid://e4n8ycd6uw2c"]
 
 [ext_resource type="PackedScene" uid="uid://cckyk5wmqnlo1" path="res://prefabs/titleScreen.tscn" id="1_ack8p"]
-[ext_resource type="PackedScene" uid="uid://yhtflpmvfb7p" path="res://prefabs/mainmenu_astriod.tscn" id="2_lqffx"]
+[ext_resource type="Script" path="res://scripts/AstroidSpawner.cs" id="2_wcfao"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uv7m4"]
-sky_curve = 0.0955921
-ground_curve = 0.108094
-sun_angle_max = 19.44
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0g5hq"]
 
 [sub_resource type="Sky" id="Sky_6fy5d"]
-sky_material = SubResource("ProceduralSkyMaterial_uv7m4")
+sky_material = SubResource("ProceduralSkyMaterial_0g5hq")
 
 [sub_resource type="Environment" id="Environment_phf0f"]
 background_mode = 2
@@ -21,7 +18,7 @@ sky = SubResource("Sky_6fy5d")
 [node name="MainMenu" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32.5454)
 
 [node name="title" parent="." instance=ExtResource("1_ack8p")]
 
@@ -29,5 +26,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 environment = SubResource("Environment_phf0f")
 camera_attributes = SubResource("CameraAttributesPractical_7i8g2")
 
-[node name="mainmenuAstriod" parent="." instance=ExtResource("2_lqffx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.67348)
+[node name="astroid spawner" type="Node3D" parent="."]
+transform = Transform3D(0.891038, -0.453928, 0, 0.453928, 0.891038, 0, 0, 0, 1, -48.7155, -18.8895, 0)
+script = ExtResource("2_wcfao")
+
+[node name="astroid spawner2" type="Node3D" parent="."]
+transform = Transform3D(-0.907323, -0.420434, 0, 0.420434, -0.907323, 0, 0, 0, 1, 44.7953, -17.0171, 0)
+script = ExtResource("2_wcfao")
+
+[node name="astroid spawner3" type="Node3D" parent="."]
+transform = Transform3D(0.848649, 0.528957, 0, -0.528957, 0.848649, 0, 0, 0, 1, -48.7155, 25.9193, 0)
+script = ExtResource("2_wcfao")
+
+[node name="astroid spawner4" type="Node3D" parent="."]
+transform = Transform3D(-0.837032, 0.547154, 0, -0.547154, -0.837032, 0, 0, 0, 1, 44.7953, 31.973, 0)
+script = ExtResource("2_wcfao")

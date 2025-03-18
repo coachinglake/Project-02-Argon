@@ -1,10 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://yhtflpmvfb7p"]
+[gd_scene load_steps=6 format=3 uid="uid://yhtflpmvfb7p"]
 
-[ext_resource type="Script" path="res://scripts/MainmenuAstriod.cs" id="1_w0fxc"]
+[ext_resource type="Script" uid="uid://b8c6ue0lpvb12" path="res://scripts/MainmenuAstriod.cs" id="1_w0fxc"]
+[ext_resource type="ArrayMesh" uid="uid://bxx0ssyndg0ld" path="res://meshes/asteroid.obj" id="2_mi5m3"]
+[ext_resource type="Texture2D" uid="uid://dgwqjv5q5kg4m" path="res://Textures/Astroid.jpg" id="3_54jre"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ifi6s"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_31io2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3d38x"]
+albedo_color = Color(0.537011, 0.537011, 0.537011, 1)
+albedo_texture = ExtResource("3_54jre")
+roughness_texture = ExtResource("3_54jre")
+heightmap_enabled = true
+heightmap_scale = -10.27
+heightmap_texture = ExtResource("3_54jre")
 
 [node name="mainmenuAstriod" type="RigidBody3D"]
 gravity_scale = 0.0
@@ -14,9 +22,12 @@ script = ExtResource("1_w0fxc")
 shape = SubResource("SphereShape3D_ifi6s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_31io2")
+transform = Transform3D(0.177699, 0, 0, 0, 0.177699, 0, 0, 0, 0.177699, 0, -0.240705, 0)
+mesh = ExtResource("2_mi5m3")
+surface_material_override/0 = SubResource("StandardMaterial3D_3d38x")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -3,7 +3,7 @@ using System;
 
 public partial class MainmenuAstriod : RigidBody3D
 {
-	Vector3 LocalForce = new Vector3(10, 0, 0); // Force in the X direction
+	Vector3 LocalForce = new Vector3(30, 0, 0); // Force in the X direction
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{

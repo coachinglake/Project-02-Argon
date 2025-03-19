@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cckyk5wmqnlo1" path="res://prefabs/titleScreen.tscn" id="1_ack8p"]
 [ext_resource type="Script" uid="uid://ij4kuqd6nj3b" path="res://scripts/AstroidSpawner.cs" id="2_wcfao"]
-[ext_resource type="Texture2D" uid="uid://c7randf13kuwl" path="res://Textures/pastart.jpg" id="3_wu84c"]
+[ext_resource type="Texture2D" uid="uid://c7randf13kuwl" path="res://textures/pastart.jpg" id="3_wu84c"]
 [ext_resource type="Script" uid="uid://c58tpwm80apqs" path="res://scripts/Background.cs" id="4_wu84c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bqqt6"]

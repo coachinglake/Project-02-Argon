@@ -25,8 +25,10 @@ public partial class AstroidSpawner : Node3D
 		if(rock == true)
 		{
 			AddChild(meteor);
+			rock = false;
 		}else{
 			AddChild(meteor2);
+			rock = true;
 		}
 		
 	}

@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cckyk5wmqnlo1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hw8k7"]
-font_size = 88
+font_size = 77
 
 [node name="title" type="Control"]
 layout_mode = 3
@@ -41,11 +41,11 @@ text = "PLAY"
 
 [node name="Label" type="Label" parent="Control/Control"]
 layout_mode = 0
-offset_left = -329.0
-offset_top = -295.0
-offset_right = 371.0
-offset_bottom = -174.0
-text = "Project 02 Argon"
+offset_left = -342.0
+offset_top = -294.0
+offset_right = 363.0
+offset_bottom = -173.0
+text = "Project 3458 Argon"
 label_settings = SubResource("LabelSettings_hw8k7")
 horizontal_alignment = 1
 
